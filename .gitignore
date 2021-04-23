@@ -1,0 +1,70 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/*
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# build artifacts
+bundle
+bundler
+gems/
+build/
+Pods/
+Carthage/
+node_modules/
+package-lock.json
+DerivedData/
+.swiftpm/
+
+# cli
+.cached/
+.tmp
+cli
+
+# realm management
+autodoc-swift-ios/Resources/cache.realm.lock
+autodoc-swift-ios/Resources/cache.realm.management/
+
+# fastlane
+fastlane/report.xml
+fastlane/screenshots
+fastlane/README.md
+fastlane/TestResults/
+fastlane/test_output/
+
+# local config
+autodoc-swift-ios/local.xcconfig
