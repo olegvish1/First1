@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0F265E262F56B400A85762 /* PurpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F265D262F56B400A85762 /* PurpleViewController.swift */; };
 		7C5201F6262AE12A002F627D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5201F5262AE12A002F627D /* AppDelegate.swift */; };
 		7C5201F8262AE12A002F627D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5201F7262AE12A002F627D /* SceneDelegate.swift */; };
 		7C5201FA262AE12A002F627D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5201F9262AE12A002F627D /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0F265D262F56B400A85762 /* PurpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleViewController.swift; sourceTree = "<group>"; };
 		7C5201F2262AE12A002F627D /* First1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5201F5262AE12A002F627D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5201F7262AE12A002F627D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				7C5201F5262AE12A002F627D /* AppDelegate.swift */,
 				7C5201F7262AE12A002F627D /* SceneDelegate.swift */,
 				7C5201F9262AE12A002F627D /* ViewController.swift */,
+				7C0F265D262F56B400A85762 /* PurpleViewController.swift */,
 				7C5201FB262AE12A002F627D /* Main.storyboard */,
 				7C5201FE262AE12C002F627D /* Assets.xcassets */,
 				7C520200262AE12C002F627D /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5201FA262AE12A002F627D /* ViewController.swift in Sources */,
+				7C0F265E262F56B400A85762 /* PurpleViewController.swift in Sources */,
 				7C5201F6262AE12A002F627D /* AppDelegate.swift in Sources */,
 				7C5201F8262AE12A002F627D /* SceneDelegate.swift in Sources */,
 			);
