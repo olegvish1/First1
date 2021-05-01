@@ -63,7 +63,7 @@
                                 <rect key="frame" x="166.66666666666666" y="613" width="81" height="30"/>
                                 <state key="normal" title="Open Slider"/>
                                 <connections>
-                                    <segue destination="m28-iO-IQB" kind="show" id="Uix-HJ-piI"/>
+                                    <segue destination="m28-iO-IQB" kind="show" identifier="slider" id="Uix-HJ-piI"/>
                                 </connections>
                             </button>
                         </subviews>

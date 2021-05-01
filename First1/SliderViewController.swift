@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol SliderViewControllerDelegate: AnyObject {
+    func buttonTapped()
+}
+
 class SliderViewController: UIViewController {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet var slider: UISlider!
     @IBOutlet var coverView: UIView!
     @IBOutlet var shadowSwitch: UISwitch!
+
+    weak var delegate: SliderViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +49,8 @@ class SliderViewController: UIViewController {
 
         contentView.backgroundColor = leftColor
         coverView.backgroundColor = rightColor
+
+        delegate?.buttonTapped()
     }
 
     @IBAction func switchAction(_ sender: UISwitch) {
