@@ -19,6 +19,24 @@ class ViewController: UIViewController {
 
     @IBAction func tapAction() {
         myLabel.text = "Button tapped"
+
+        if let navigation = navigationController {
+            let alert = UIAlertController.init(title: "Button Tapped", message: "SliderViewControllerDelegate Button Tapped", preferredStyle: .alert)
+
+            alert.addAction(.init(title: "SliderViewControllerDelegate Go", style: .default, handler: { _ in
+                print("GO button tapped")
+                // open screen
+                // Analytic.trackEvent
+            }))
+
+            alert.addAction(.init(title: "OK", style: .cancel))
+
+            alert.addAction(.init(title: "Delete", style: .destructive, handler: { _ in
+                print("Delete button tapped")
+                // Delete samething
+            }))
+            navigation.present(alert, animated: true)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
