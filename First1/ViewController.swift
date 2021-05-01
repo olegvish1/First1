@@ -19,22 +19,40 @@ class ViewController: UIViewController {
 
     @IBAction func tapAction() {
         myLabel.text = "Button tapped"
+        showAlert()
+    }
 
+    func showAlert() {
         if let navigation = navigationController {
-            let alert = UIAlertController.init(title: "Button Tapped", message: "SliderViewControllerDelegate Button Tapped", preferredStyle: .alert)
+            let alert = UIAlertController.init(
+                title: "Button Tapped",
+                message: "SliderViewControllerDelegate Button Tapped",
+                preferredStyle: .alert)
 
-            alert.addAction(.init(title: "SliderViewControllerDelegate Go", style: .default, handler: { _ in
-                print("GO button tapped")
-                // open screen
-                // Analytic.trackEvent
-            }))
 
-            alert.addAction(.init(title: "OK", style: .cancel))
+            let goAction = UIAlertAction(
+                title: "SliderViewControllerDelegate Go",
+                style: .default,
+                handler: { _ in
+                    print("GO button tapped")
+                    // open screen
+                    // Analytic.trackEvent
+                })
 
-            alert.addAction(.init(title: "Delete", style: .destructive, handler: { _ in
-                print("Delete button tapped")
-                // Delete samething
-            }))
+            let okAction = UIAlertAction(title: "OK", style: .cancel)
+
+            let deleteAction = UIAlertAction(
+                title: "Delete",
+                style: .destructive,
+                handler: { _ in
+                    print("Delete button tapped")
+                    // Delete samething
+                })
+
+            alert.addAction(goAction)
+            alert.addAction(okAction)
+            alert.addAction(deleteAction)
+
             navigation.present(alert, animated: true)
         }
     }
