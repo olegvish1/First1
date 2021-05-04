@@ -58,9 +58,8 @@ extension TableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCellID", for: indexPath) as! MyTableViewCell
 
         if let user = users?[indexPath.row] {
-            cell.titleLabel.text = user.name
-            cell.descriptionLabel.text = user.description
-            cell.myImageView.image = user.avatar
+
+            cell.setup(user)
         }
         return cell
     }
