@@ -9,9 +9,9 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
 
-    @IBOutlet var myImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet private var myImageView: UIImageView!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +22,12 @@ class MyTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func setup(_ user: User) {
+        titleLabel.text = user.name
+        descriptionLabel.text = user.description
+        myImageView.image = user.avatar
     }
 
 }
