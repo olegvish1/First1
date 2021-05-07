@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct User {
-    let name: String
-    let avatar: UIImage?
-    let description: String
+struct User: Decodable {
+    var first_name: String
+    var picture: String
+    var last_name: String
 }
 
 class TableViewController: UIViewController {
@@ -24,29 +24,20 @@ class TableViewController: UIViewController {
 
         tableView.dataSource = self
 
-        createData()
+//        createData()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     func createData() {
-        let image = #imageLiteral(resourceName: "catAvatar")
-        let image2 = UIImage(named:"catAvatar")
-        users = [User(name: "Name", avatar: image, description: "description"),
-                 User(name: "Name", avatar: image, description: "description"),
-                 User(name: "Name", avatar: image2, description: "description"),
-                 User(name: "Name", avatar: image2, description: "description")]
+//        let image = #imageLiteral(resourceName: "catAvatar")
+//        let image2 = UIImage(named:"women/38.jpg")
+        users = [User(first_name: "Name", picture: "catAvatar", last_name: "description"),
+                 User(first_name: "Name", picture: "catAvatar", last_name: "description"),
+                 User(first_name: "Name", picture: "women/38.jpg", last_name: "description"),
+                 User(first_name: "Name", picture: "women/38.jpg", last_name: "description")]
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension TableViewController: UITableViewDataSource {
 

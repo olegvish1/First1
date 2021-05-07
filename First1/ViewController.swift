@@ -17,6 +17,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        showTableVC()
+    }
+
     @IBAction func tapAction() {
         myLabel.text = "Button tapped"
         showAlert()
@@ -71,6 +77,48 @@ extension ViewController: SliderViewControllerDelegate {
     func buttonTapped() {
 
         myLabel.text = "SliderViewControllerDelegate buttonTapped"
+    }
+
+    func showTableVC() {
+        // Create a reference to the the appropriate storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        // Instantiate the desired view controller from the storyboard using the view controllers identifier
+        // Cast is as the custom view controller type you created in order to access it's properties and methods
+        if let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController {
+
+            let users = getUsersList()
+            vc.users = users
+
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
+    func getUsersList() -> [User] {
+
+        if let path = Bundle.main.path(forResource: "users", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+
+                let users: [User] = try JSONDecoder().decode([User].self, from: data)
+
+                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? Array<Dictionary<String, AnyObject>> {
+                    print(jsonResult)
+                    for object in jsonResult {
+
+                    }
+                }
+
+                return users
+            } catch {
+                print(error)
+                // handle error
+
+                return []
+            }
+        }
+
+        return []
     }
 }
 
