@@ -24,10 +24,16 @@ class MyTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func prepareForReuse() {
+        myImageView.image = nil
+    }
+
     func setup(_ user: User) {
-        titleLabel.text = user.name
-        descriptionLabel.text = user.description
-        myImageView.image = user.avatar
+        titleLabel.text = user.firstName
+        descriptionLabel.text = user.lastName
+        if let picture = user.picture {
+            myImageView.image = UIImage(named: picture)
+        }
     }
 
 }

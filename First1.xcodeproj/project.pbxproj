@@ -17,6 +17,11 @@
 		7C520202262AE12C002F627D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C520200262AE12C002F627D /* LaunchScreen.storyboard */; };
 		7C67FBDE2641B9D2000ABA2E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C67FBDD2641B9D2000ABA2E /* TableViewController.swift */; };
 		7C67FBE12641BD78000ABA2E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C67FBE02641BD78000ABA2E /* MyTableViewCell.swift */; };
+		7CEA43162646868A00697562 /* men in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA43122646868A00697562 /* men */; };
+		7CEA43172646868A00697562 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA43132646868A00697562 /* users.json */; };
+		7CEA43182646868A00697562 /* women in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA43142646868A00697562 /* women */; };
+		7CEA43192646868A00697562 /* algolia in Resources */ = {isa = PBXBuildFile; fileRef = 7CEA43152646868A00697562 /* algolia */; };
+		7CEA431C26468F0700697562 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA431B26468F0700697562 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		7C520203262AE12C002F627D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C67FBDD2641B9D2000ABA2E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7C67FBE02641BD78000ABA2E /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		7CEA43122646868A00697562 /* men */ = {isa = PBXFileReference; lastKnownFileType = folder; path = men; sourceTree = "<group>"; };
+		7CEA43132646868A00697562 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		7CEA43142646868A00697562 /* women */ = {isa = PBXFileReference; lastKnownFileType = folder; path = women; sourceTree = "<group>"; };
+		7CEA43152646868A00697562 /* algolia */ = {isa = PBXFileReference; lastKnownFileType = folder; path = algolia; sourceTree = "<group>"; };
+		7CEA431B26468F0700697562 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +79,27 @@
 				7C5201F9262AE12A002F627D /* ViewController.swift */,
 				7C0F265D262F56B400A85762 /* PurpleViewController.swift */,
 				7C05DC47263287690054390D /* SliderViewController.swift */,
-				7C67FBDD2641B9D2000ABA2E /* TableViewController.swift */,
-				7C67FBE02641BD78000ABA2E /* MyTableViewCell.swift */,
+				7CEA431E26468F7300697562 /* TableVC */,
 				7C5201FB262AE12A002F627D /* Main.storyboard */,
 				7C5201FE262AE12C002F627D /* Assets.xcassets */,
+				7CEA43152646868A00697562 /* algolia */,
+				7CEA43122646868A00697562 /* men */,
+				7CEA43132646868A00697562 /* users.json */,
+				7CEA43142646868A00697562 /* women */,
 				7C520200262AE12C002F627D /* LaunchScreen.storyboard */,
 				7C520203262AE12C002F627D /* Info.plist */,
 			);
 			path = First1;
+			sourceTree = "<group>";
+		};
+		7CEA431E26468F7300697562 /* TableVC */ = {
+			isa = PBXGroup;
+			children = (
+				7C67FBDD2641B9D2000ABA2E /* TableViewController.swift */,
+				7CEA431B26468F0700697562 /* User.swift */,
+				7C67FBE02641BD78000ABA2E /* MyTableViewCell.swift */,
+			);
+			path = TableVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +159,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEA43172646868A00697562 /* users.json in Resources */,
 				7C520202262AE12C002F627D /* LaunchScreen.storyboard in Resources */,
 				7C5201FF262AE12C002F627D /* Assets.xcassets in Resources */,
+				7CEA43182646868A00697562 /* women in Resources */,
 				7C5201FD262AE12A002F627D /* Main.storyboard in Resources */,
+				7CEA43162646868A00697562 /* men in Resources */,
+				7CEA43192646868A00697562 /* algolia in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +180,7 @@
 				7C5201FA262AE12A002F627D /* ViewController.swift in Sources */,
 				7C67FBDE2641B9D2000ABA2E /* TableViewController.swift in Sources */,
 				7C05DC48263287690054390D /* SliderViewController.swift in Sources */,
+				7CEA431C26468F0700697562 /* User.swift in Sources */,
 				7C0F265E262F56B400A85762 /* PurpleViewController.swift in Sources */,
 				7C5201F6262AE12A002F627D /* AppDelegate.swift in Sources */,
 				7C5201F8262AE12A002F627D /* SceneDelegate.swift in Sources */,

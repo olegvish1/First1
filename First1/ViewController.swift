@@ -56,6 +56,9 @@ class ViewController: UIViewController {
             navigation.present(alert, animated: true)
         }
     }
+    @IBAction func openTableAction() {
+        showTableVC()
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "slider",
@@ -72,5 +75,41 @@ extension ViewController: SliderViewControllerDelegate {
 
         myLabel.text = "SliderViewControllerDelegate buttonTapped"
     }
+
+    func showTableVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        if let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController {
+
+            let users = getUsersList()
+            vc.users = users
+
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
+    func getUsersList() -> [User] {
+
+        if let path = Bundle.main.path(forResource: "users", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                let users: [User] = try decoder.decode([User].self, from: data)
+
+                return users
+            } catch {
+                print(error)
+
+                return []
+            }
+        }
+
+        return []
+    }
+
+
 }
 
