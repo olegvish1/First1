@@ -60,17 +60,17 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "slider",
            let destination = segue.destination as? SliderViewController {
-                destination.delegate = self
+//                destination.delegate = self
         }
     }
 }
 
 
-extension ViewController: SliderViewControllerDelegate {
-
-    func buttonTapped() {
-
-        myLabel.text = "SliderViewControllerDelegate buttonTapped"
-    }
-}
+//extension ViewController: SliderViewControllerDelegate {
+//
+//    func buttonTapped() {
+//
+//        myLabel.text = "SliderViewControllerDelegate buttonTapped"
+//    }
+//}
 
