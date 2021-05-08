@@ -8,9 +8,21 @@
 import UIKit
 
 struct User: Decodable {
-    var first_name: String
+    var firstName: String
     var picture: String
-    var last_name: String
+    var lastName: String
+    var address: Adress
+
+    enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+        case picture
+        case lastName = "last_name"
+        case address = "location"
+    }
+}
+
+struct Adress: Decodable {
+    var city: String
 }
 
 class TableViewController: UIViewController {
@@ -30,10 +42,10 @@ class TableViewController: UIViewController {
     func createData() {
 //        let image = #imageLiteral(resourceName: "catAvatar")
 //        let image2 = UIImage(named:"women/38.jpg")
-        users = [User(first_name: "Name", picture: "catAvatar", last_name: "description"),
-                 User(first_name: "Name", picture: "catAvatar", last_name: "description"),
-                 User(first_name: "Name", picture: "women/38.jpg", last_name: "description"),
-                 User(first_name: "Name", picture: "women/38.jpg", last_name: "description")]
+//        users = [User(firstName: "Name", picture: "catAvatar", lastName: "description"),
+//                 User(firstName: "Name", picture: "catAvatar", lastName: "description"),
+//                 User(firstName: "Name", picture: "women/38.jpg", lastName: "description"),
+//                 User(firstName: "Name", picture: "women/38.jpg", lastName: "description")]
     }
 }
 

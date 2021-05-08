@@ -30,8 +30,8 @@ class MyTableViewCell: UITableViewCell {
     }
 
     func setup(_ user: User) {
-        titleLabel.text = user.first_name
-        descriptionLabel.text = user.last_name
+        titleLabel.text = user.firstName
+        descriptionLabel.text = user.lastName
         myImageView.image = UIImage(named: user.picture)
     }
 }

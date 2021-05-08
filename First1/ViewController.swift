@@ -97,17 +97,18 @@ extension ViewController: SliderViewControllerDelegate {
     func getUsersList() -> [User] {
 
         if let path = Bundle.main.path(forResource: "users", ofType: "json") {
+
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
 
                 let users: [User] = try JSONDecoder().decode([User].self, from: data)
 
-                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? Array<Dictionary<String, AnyObject>> {
-                    print(jsonResult)
-                    for object in jsonResult {
-
-                    }
-                }
+//                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? Array<Dictionary<String, AnyObject>> {
+//                    print(jsonResult)
+//                    for object in jsonResult {
+//
+//                    }
+//                }
 
                 return users
             } catch {
