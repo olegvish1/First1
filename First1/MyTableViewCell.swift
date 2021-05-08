@@ -33,5 +33,10 @@ class MyTableViewCell: UITableViewCell {
         titleLabel.text = user.firstName
         descriptionLabel.text = user.lastName
         myImageView.image = UIImage(named: user.picture)
+
+        let userData = try! JSONEncoder().encode(user)
+        let userString = String(data: userData, encoding: .utf8)!
+        print(userData)
+        print(userString)
     }
 }

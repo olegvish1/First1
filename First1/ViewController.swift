@@ -101,7 +101,9 @@ extension ViewController: SliderViewControllerDelegate {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
 
-                let users: [User] = try JSONDecoder().decode([User].self, from: data)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let users: [User] = try decoder.decode([User].self, from: data)
 
 //                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? Array<Dictionary<String, AnyObject>> {
 //                    print(jsonResult)
