@@ -46,8 +46,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bk9-Tw-QPg">
-                                <rect key="frame" x="268" y="226.66666666666666" width="46" height="29.999999999999972"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="213" y="226.66666666666666" width="101" height="29.999999999999972"/>
+                                <state key="normal" title="Open text field"/>
                                 <connections>
                                     <segue destination="rdz-uX-9xJ" kind="show" id="jwP-dh-lPX"/>
                                 </connections>
@@ -76,6 +76,7 @@
                             <constraint firstItem="bk9-Tw-QPg" firstAttribute="top" secondItem="L1I-Ss-RDc" secondAttribute="bottom" constant="100" id="O6n-55-Uvx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L1I-Ss-RDc" secondAttribute="trailing" constant="100" id="Pg6-sw-PRe"/>
                             <constraint firstItem="L1I-Ss-RDc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="VDd-o3-hEO"/>
+                            <constraint firstItem="bk9-Tw-QPg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ZtX-LS-tDl"/>
                             <constraint firstItem="nZN-ga-s7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aFB-8c-6Va"/>
                             <constraint firstItem="m0t-is-enA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kf7-wN-yJR"/>
                             <constraint firstItem="L1I-Ss-RDc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="pWi-7p-ZRZ"/>
@@ -195,21 +196,52 @@
             </objects>
             <point key="canvasLocation" x="1181" y="-138"/>
         </scene>
-        <!--Purple View Controller-->
+        <!--Text Field View Controller-->
         <scene sceneID="xIW-Be-RAr">
             <objects>
-                <viewController id="rdz-uX-9xJ" customClass="PurpleViewController" customModule="First1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rdz-uX-9xJ" customClass="TextFieldViewController" customModule="First1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8pM-tT-I6e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hhK-fd-GyV">
+                                <rect key="frame" x="30" y="74" width="354" height="34"/>
+                                <color key="textColor" red="0.0039215686274509803" green="0.29202920751633987" blue="0.41828703703703701" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="yes" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="rdz-uX-9xJ" eventType="valueChanged" id="9Af-vX-W7U"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E4C-1P-7GT">
+                                <rect key="frame" x="30" y="138" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <action selector="passEditing:" destination="rdz-uX-9xJ" eventType="editingChanged" id="maR-W5-6t6"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Rtz-1A-N2g"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E4C-1P-7GT" firstAttribute="leading" secondItem="Rtz-1A-N2g" secondAttribute="leading" constant="30" id="8DO-qS-j8H"/>
+                            <constraint firstItem="Rtz-1A-N2g" firstAttribute="trailing" secondItem="hhK-fd-GyV" secondAttribute="trailing" constant="30" id="9ad-eh-ooy"/>
+                            <constraint firstItem="hhK-fd-GyV" firstAttribute="leading" secondItem="Rtz-1A-N2g" secondAttribute="leading" constant="30" id="ToK-km-aNy"/>
+                            <constraint firstItem="hhK-fd-GyV" firstAttribute="top" secondItem="Rtz-1A-N2g" secondAttribute="top" constant="30" id="Y3Q-iu-Sn1"/>
+                            <constraint firstItem="Rtz-1A-N2g" firstAttribute="trailing" secondItem="E4C-1P-7GT" secondAttribute="trailing" constant="30" id="oev-fy-vU6"/>
+                            <constraint firstItem="E4C-1P-7GT" firstAttribute="top" secondItem="hhK-fd-GyV" secondAttribute="bottom" constant="30" id="ssr-cS-6f5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hKl-Sm-cYq"/>
+                    <connections>
+                        <outlet property="loginTextField" destination="hhK-fd-GyV" id="2a5-UB-8Uf"/>
+                        <outlet property="passTextField" destination="E4C-1P-7GT" id="pex-pi-uWT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7C-rF-cAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="-728"/>
+            <point key="canvasLocation" x="485.50724637681162" y="-728.804347826087"/>
         </scene>
     </scenes>
     <resources>
@@ -218,9 +250,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
