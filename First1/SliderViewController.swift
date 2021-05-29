@@ -17,6 +17,7 @@ class SliderViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var coverView: UIView!
     @IBOutlet var shadowSwitch: UISwitch!
+    @IBOutlet var imageView: UIImageView!
 
     weak var delegate: SliderViewControllerDelegate?
     
@@ -32,6 +33,9 @@ class SliderViewController: UIViewController {
 
         coverView.alpha = CGFloat(slider.value)
         contentView.clipsToBounds = shadowSwitch.isOn
+
+        imageView.image = #imageLiteral(resourceName: "myCat")
+        view.backgroundColor = #colorLiteral(red: 0, green: 0.7891016006, blue: 0.8377580643, alpha: 1)
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
