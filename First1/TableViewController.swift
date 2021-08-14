@@ -12,12 +12,14 @@ struct User: Codable {
     var picture: String
     var lastName: String
     var city: String
+    var birthdate: TimeInterval
 
     enum CodingKeys: String, CodingKey {
         case firstName // = "first_name"
         case picture
         case lastName // = "last_name"
         case location
+        case birthdate
     }
 
     enum LocationCodingKeys: String, CodingKey {
@@ -30,6 +32,7 @@ struct User: Codable {
         self.firstName = try container.decode(String.self, forKey: .firstName)
         self.picture = try container.decode(String.self, forKey: .picture)
         self.lastName = try container.decode(String.self, forKey: .lastName)
+        self.birthdate = try container.decode(TimeInterval.self, forKey: .birthdate)
 
         // Nested ratings
         let locationContainer = try container.nestedContainer(keyedBy: LocationCodingKeys.self, forKey: .location)
