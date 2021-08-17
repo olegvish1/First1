@@ -90,7 +90,7 @@ extension ViewController: SliderViewControllerDelegate {
     func showTableVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController {
-            let users = getUsersList()
+            let users = UsersFactory.getUsers()
             vc.users = users
 
             navigationController?.pushViewController(vc, animated: true)
@@ -100,33 +100,11 @@ extension ViewController: SliderViewControllerDelegate {
     func showCollectionVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "CollectionViewController") as? CollectionViewController {
-            let users = getUsersList()
+            let users = UsersFactory.getUsers()
             vc.users = users
 
             navigationController?.pushViewController(vc, animated: true)
         }
-    }
-
-    func getUsersList() -> [User] {
-
-        if let path = Bundle.main.path(forResource: "users", ofType: "json") {
-
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let users: [User] = try decoder.decode([User].self, from: data)
-
-                return users
-            } catch {
-                print(error)
-                // handle error
-                return []
-            }
-        }
-
-        return []
     }
 }
 
