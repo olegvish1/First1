@@ -39,7 +39,7 @@ class DataStorage {
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -52,5 +52,43 @@ class DataStorage {
             }
         }
     }
+
+    func save(users: [User]) {
+
+        users.forEach { user in
+            let userObject = UserObject(context: persistentContainer.viewContext)
+            userObject.firstName = user.firstName
+            userObject.picture = user.picture
+            userObject.lastName = user.lastName
+            userObject.city = user.city
+            userObject.birthdate = user.birthdate
+        }
+
+        saveContext ()
+    }
+
+    func fetchUsers() -> [User] {
+        let request = NSFetchRequest<UserObject>.init(entityName: "UserObject")
+
+        do {
+            let userObjects = try persistentContainer.viewContext.fetch(request)
+            let users = userObjects.map { User(userObject: $0) }
+            return users
+
+        } catch let error as NSError {
+            print("error = \(error.localizedDescription)")
+            return []
+        }
+    }
 }
 
+extension User {
+
+    init(userObject: UserObject) {
+        self.firstName = userObject.firstName ?? ""
+        self.picture = userObject.picture ?? ""
+        self.lastName = userObject.lastName ?? ""
+        self.city = userObject.city ?? ""
+        self.birthdate = userObject.birthdate
+    }
+}

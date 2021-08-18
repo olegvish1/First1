@@ -13,6 +13,8 @@
 		7C22B8F126CAF31E000ABE9C /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C22B8F026CAF31E000ABE9C /* DataStorage.swift */; };
 		7C2DF73B26C7BED20050B49A /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DF73926C7BED20050B49A /* DataBase.xcdatamodeld */; };
 		7C2DF76226C7C2B70050B49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DF76126C7C2B70050B49A /* User.swift */; };
+		7C437CB026CBFAAE007A4FD6 /* UserObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C437CAE26CBFAAE007A4FD6 /* UserObject+CoreDataClass.swift */; };
+		7C437CB126CBFAAE007A4FD6 /* UserObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C437CAF26CBFAAE007A4FD6 /* UserObject+CoreDataProperties.swift */; };
 		7C5201F6262AE12A002F627D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5201F5262AE12A002F627D /* AppDelegate.swift */; };
 		7C5201F8262AE12A002F627D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5201F7262AE12A002F627D /* SceneDelegate.swift */; };
 		7C5201FA262AE12A002F627D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5201F9262AE12A002F627D /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		7C22B8F026CAF31E000ABE9C /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		7C2DF73A26C7BED20050B49A /* dataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataBase.xcdatamodel; sourceTree = "<group>"; };
 		7C2DF76126C7C2B70050B49A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7C437CAE26CBFAAE007A4FD6 /* UserObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7C437CAF26CBFAAE007A4FD6 /* UserObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7C5201F2262AE12A002F627D /* First1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5201F5262AE12A002F627D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5201F7262AE12A002F627D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		7C22B8F926CAF488000ABE9C /* DataStorage */ = {
 			isa = PBXGroup;
 			children = (
+				7C437CAE26CBFAAE007A4FD6 /* UserObject+CoreDataClass.swift */,
+				7C437CAF26CBFAAE007A4FD6 /* UserObject+CoreDataProperties.swift */,
 				7C22B8F026CAF31E000ABE9C /* DataStorage.swift */,
 			);
 			path = DataStorage;
@@ -197,8 +203,10 @@
 				7C67FBE12641BD78000ABA2E /* MyTableViewCell.swift in Sources */,
 				7C5201FA262AE12A002F627D /* ViewController.swift in Sources */,
 				7C7EDD1626B96FDE00E784C6 /* MyCollectionViewCell.swift in Sources */,
+				7C437CB026CBFAAE007A4FD6 /* UserObject+CoreDataClass.swift in Sources */,
 				7C67FBDE2641B9D2000ABA2E /* TableViewController.swift in Sources */,
 				7C05DC48263287690054390D /* SliderViewController.swift in Sources */,
+				7C437CB126CBFAAE007A4FD6 /* UserObject+CoreDataProperties.swift in Sources */,
 				7C22B8F126CAF31E000ABE9C /* DataStorage.swift in Sources */,
 				7C0F265E262F56B400A85762 /* TextFieldViewController.swift in Sources */,
 				7C7EDD1326B96EC900E784C6 /* CollectionViewController.swift in Sources */,

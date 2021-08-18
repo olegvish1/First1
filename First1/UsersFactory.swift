@@ -14,6 +14,11 @@ final class UsersFactory {
 
     static func getUsers() -> [User] {
 
+        let usersFromDB = self.fetchUsers()
+        if !usersFromDB.isEmpty {
+            return usersFromDB
+        }
+
         if let path = Bundle.main.path(forResource: "users", ofType: "json") {
 
             do {
@@ -22,6 +27,8 @@ final class UsersFactory {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let users: [User] = try decoder.decode([User].self, from: data)
+
+                Self.saveUsers(users: users)
 
                 return users
             } catch {
@@ -34,7 +41,11 @@ final class UsersFactory {
         return []
     }
 
-    func saveUser(user: User) {
-        
+    static func saveUsers(users: [User]) {
+        DataStorage().save(users: users)
+    }
+
+    static func fetchUsers() -> [User] {
+        DataStorage().fetchUsers()
     }
 }
